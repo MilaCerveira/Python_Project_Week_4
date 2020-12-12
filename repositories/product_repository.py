@@ -39,7 +39,7 @@ def select(id):
 
 #crud function to delete all
 def delete_all():
-    sql = "DELETE FROM books"
+    sql = "DELETE FROM products"
     run_sql(sql)
 
 #crud function to delete by id 
