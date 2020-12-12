@@ -17,4 +17,5 @@ CREATE TABLE products(
     buying_cost INT, 
     selling_price INT,
     manufacturer_id INT REFERENCES manufacturers(id)
+    
 );
