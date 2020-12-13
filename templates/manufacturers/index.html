@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% for manufacturer in all_manufacturers %}
+  <div class="manufacturer">
+    <div class="content">
+      <a href="/manufacturers/{{manufacturer.id}}">{{manufacturer.name}}</a>
+      <div class="name">
+        {{manufacturer.phone}}
+        {{manufacturer.website}}
+        {{manufacturer.email}}
+        
+      </div>
+      <div class="buttons">
+        <form class="delete-form" action="/manufactuer/{{manufacturer.id}}/delete" method="POST">
+          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:black" aria-hidden="true"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+<a href="/manufacturers/new">New manufacturer</a>>
+{% endblock %}

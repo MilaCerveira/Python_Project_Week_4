@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% for product in all_products %}
+  <div class="product">
+    <div class="content">
+      <a href="/products/{{product.id}}">{{product.name}}</a>
+      <div class="name">
+        {{product.description}}
+        {{product.stock_quantity}}
+        {{product.buying_cost}}
+        {{product.selling_cost}}
+        <span class="manufacturer">{{product.manufacturer}}</span>
+        <p><i>{{product.manufactuer.name}}</i></p>
+      </div>
+      <div class="buttons">
+        <form class="delete-form" action="/products/{{product.id}}/delete" method="POST">
+          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:black" aria-hidden="true"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+<a href="/products/new">New product</a>>
+{% endblock %}

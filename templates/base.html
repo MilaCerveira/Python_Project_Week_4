@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Product Manager App</title>
+   
+</head>
+<body>
+    <header>
+        <h1>Superfly for a Vinyl Guy</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li>
+                    Products
+                    <ul>
+                        <li><a href="/products">All</a></li>
+                        
+                    </ul>
+                </li>
+                <li>
+                    Manufacturers
+                    <ul>
+                        <li><a href="/manufacturers">All</a></li>
+                        
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+        <img src='https://media3.giphy.com/media/5ehBR5qtLEXBe/giphy.gif?cid=ecf05e47kaxar5jcjmr5465rsjy3f8990baiwohz5k81xqhx&rid=giphy.gif' alt = 'spinning record'>
+    </header>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

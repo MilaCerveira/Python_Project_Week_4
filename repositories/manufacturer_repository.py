@@ -9,6 +9,7 @@ def save(manufacturer):
     sql = "INSERT INTO manufacturers (name, phone, website, email) VALUES (%s, %s, %s, %s) RETURNING *"
     values = [manufacturer.name, manufacturer.phone, manufacturer.website, manufacturer.email]
     results = run_sql(sql, values)
+    print(results)
     id = results[0]['id']
     manufacturer.id = id 
     return manufacturer
@@ -19,20 +20,21 @@ def select_all():
 
     sql = "SELECT * FROM manufacturers"
     results = run_sql(sql) 
-
+    print(results)
     for row in results:
-        manufacturer = Manufacturer(row['name'], row['phone'], row['website'], row['email'])
+        manufacturer.append(Manufacturer(row[1], row[2], row[3], row[4], row[0]))
     return manufacturer
 
 #Make crud function that selects by id?
 def select(id):
+    print(id)
     manufacturer = None 
     sql = "SELECT * FROM manufacturers WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)[0]
-
+    result = run_sql(sql, values)
+    print(result)
     if result is not None:
-        manufacturer = Manufacturer(results['name'], ['phone'], ['website'], ['email'])
+        manufacturer = Manufacturer(result[0], [1], [2], [3])
     return manufacturer
 
 #Make crud function to delete all 
