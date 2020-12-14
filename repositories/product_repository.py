@@ -19,11 +19,12 @@ def select_all():
     products = []
     sql = "SELECT * FROM products"
     results = run_sql(sql)
-
     for row in results:
-        manufacturer = manufacturer_repository.select(row['manufacturer_id'])
-        product = Product(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_price'], row['manufacturer_id'])
+        manufacturer = manufacturer_repository.select(row[6])
+        print(manufacturer)
+        product = Product(row[1], row[2], row[3], row[4], row[5], manufacturer, row[0])
         products.append(product)
+    print(products)
     return products
 #crud function to select prodcuct from database table via id
 def select(id):

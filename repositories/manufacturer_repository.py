@@ -31,10 +31,10 @@ def select(id):
     manufacturer = None 
     sql = "SELECT * FROM manufacturers WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)
-    print(result)
+    result = run_sql(sql, values)[0]
+    print("Manufacturer:", result)
     if result is not None:
-        manufacturer = Manufacturer(result[0], [1], [2], [3])
+        manufacturer = Manufacturer(result[1], result[2], result[3], result[4], result[0])
     return manufacturer
 
 #Make crud function to delete all 

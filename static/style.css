@@ -1,11 +1,17 @@
 body{
     font-family: "Helvetica", arial, sans-serif; font-size: 16px;
+    background-color:#0b0c0c;
+    
+    
   }
   
-  h1{
-    font-family: 'Sacramento', cursive;
-  }
+  /*style imorted google font */
 
+  h1{
+    font-family: 'Sacramento', cursive; font-size:34px;
+    color: red;
+  }
+  
   .product {
     border: 1px solid black;
     width: 300px;
@@ -14,6 +20,7 @@ body{
     display: flex;
     line-height: 18px;
     margin-bottom: 10px;
+    color: white;
   }
   
   .name {
@@ -23,7 +30,7 @@ body{
   }
   
   .manufacturer{
-    color: black;
+    color: white;
     font-size: 13px;
     margin-left: 20px;
   }
@@ -32,7 +39,7 @@ body{
     margin-top: 10px;
     margin-left: 2px;
     font-size: 1.4em;
-    color: black;
+    color: white;
   }
   
   .buttons i {
@@ -56,13 +63,13 @@ body{
   .delete-form{
     display: inline;
   }
-  
-  .menu{
+  .menu {
     display: flex;
     padding: 10px;
-    background-color:black;
+    background-color: black;
     color: white;
-  }
+}
+  
   
   .menu li a{
     text-decoration: none;
@@ -86,10 +93,4 @@ body{
     margin: 0 auto;
   }
   
-  #home-image {
-    width:100vw;
-    height:100vh;
-    background-image: url('images/library.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+ 

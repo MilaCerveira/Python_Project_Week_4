@@ -11,12 +11,12 @@
         {{product.stock_quantity}}
         {{product.buying_cost}}
         {{product.selling_cost}}
-        <span class="manufacturer">{{product.manufacturer}}</span>
-        <p><i>{{product.manufactuer.name}}</i></p>
+        <span class="manufacturer">{{product.manufacturer.id}}</span>
+        <p><i>{{product.manufacturer.name}}</i></p>
       </div>
       <div class="buttons">
         <form class="delete-form" action="/products/{{product.id}}/delete" method="POST">
-          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:black" aria-hidden="true"></i></button>
+          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:white" aria-hidden="true"></i></button>
         </form>
       </div>
     </div>
