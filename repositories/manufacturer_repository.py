@@ -38,17 +38,18 @@ def select(id):
     return manufacturer
 
 #Make crud function to delete all 
-    def delete_all():
-        sql = "DELETE FROM manfacturers"
-        run_sql(sql)
+def delete_all():
+    sql = "DELETE FROM manufacturers"
+    run_sql(sql)
 #make crud function to delete by id?
-    def delete(id):
-        sql = "DELETE FROM manfacturers WHERE id = %"
-        values = [id]
-        run_sql(sql, values)
+def delete(id):
+    sql = "DELETE FROM manufacturers WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)
+    print(result)
 #make crud function to update manfacturers
-    def update(manufacturer):
-        sql = "UPDATE manufacturers SET (name, phone, website, email) = (%s, %s, %s, %s) WHERE id =%s"
-        values = [manufacturer.name, manufacturer.phone, manufacturer.website, manufacturer.email, manufacturer.id]
-        run_sql(sql, values)
+def update(manufacturer):
+    sql = "UPDATE manufacturers SET (name, phone, website, email) = (%s, %s, %s, %s) WHERE id =%s"
+    values = [manufacturer.name, manufacturer.phone, manufacturer.website, manufacturer.email, manufacturer.id]
+    run_sql(sql, values)
 

@@ -48,7 +48,7 @@ def edit_product(id):
 
 # UPDATE
 # PUT '/products/<id>'
-@products_blueprint.route("/products/<id>", methods=['PUT'])
+@products_blueprint.route("/products/<id>/edit", methods=['POST'])
 def update_product(id):
     name = request.form['name']
     description = request.form['description']
@@ -56,7 +56,8 @@ def update_product(id):
     buying_cost  = request.form['buying_cost']
     selling_price = request.form['selling_price']
     manufacturer = manufacturer_repository.select(request.form['manufacturer_id'])
-    product = Product(name, description, stock_quantity, buying_cost, selling_price, manufacturer.id)
+    print(manufacturer.id)
+    product = Product(name, description, stock_quantity, buying_cost, selling_price, manufacturer, id)
     product_repository.update(product)
     return redirect('/products')
 

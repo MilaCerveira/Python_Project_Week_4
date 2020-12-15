@@ -51,6 +51,8 @@ def delete(id):
 
 #crud function to update product in database product table
 def update(product):
-    sql = "UPDATE product SET (name, description, stock_quantity, buying_cost, selling_price, manufacturer_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    sql = "UPDATE products SET (name, description, stock_quantity, buying_cost, selling_price, manufacturer_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_price, product.manufacturer.id, product.id]
-
+    print(product.id)
+    result = run_sql(sql, values)
+    print(result)

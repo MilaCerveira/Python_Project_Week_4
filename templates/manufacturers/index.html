@@ -1,24 +1,58 @@
 {% extends "base.html" %}
 {% block content %}
 
-
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Website</th>
+    <th>Email</th>
+  </tr>
 {% for manufacturer in all_manufacturers %}
   <div class="manufacturer">
     <div class="content">
-      <a href="/manufacturers/{{manufacturer.id}}">{{manufacturer.name}}</a>
-      <div class="name">
-        {{manufacturer.phone}}
-        {{manufacturer.website}}
-        {{manufacturer.email}}
-        
-      </div>
-      <div class="buttons">
-        <form class="delete-form" action="/manufactuer/{{manufacturer.id}}/delete" method="POST">
-          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:white" aria-hidden="true"></i></button>
-        </form>
+        <tr>
+          <td>
+            <a href="/manufacturers/{{manufacturer.id}}/edit">
+              <button>
+                Edit
+              </button>
+            </a>
+          </td>
+          <td>
+            <div class="buttons">
+              <form class="delete-form" action="/manufacturers/{{manufacturer.id}}/delete" method="POST">
+                <button>
+                  Delete
+                </button>
+              </form>
+            </div>
+          </td>
+          <td>
+            {{manufacturer.name}}
+          </td>
+        <div class="name">
+          <td>
+            {{manufacturer.phone}}
+          </td>
+          <td>
+            {{manufacturer.website}}
+          </td>
+          <td>
+            {{manufacturer.email}}
+          </td>
+        </tr>
+        <!-- <div class="buttons">
+          <form class="delete-form" action="/manufacturers/{{manufacturer.id}}/delete" method="POST">
+            <button class="button"><i class="fa fa-trash-o fa-3x" style="color:white" aria-hidden="true"></i></button>
+          </form>
+        </div> -->
       </div>
     </div>
-  </div>
-{% endfor %}
+  {% endfor %}
+</table>
+    
 <a href="/manufacturers/new">New manufacturer</a>>
 {% endblock %}

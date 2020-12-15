@@ -42,13 +42,13 @@ def edit_manufacturer(id):
 
 # UPDATE
 # PUT '/manufacturers/<id>'
-@manufacturers_blueprint.route("/manufacturers/<id>", methods=['PUT'])
+@manufacturers_blueprint.route("/manufacturers/<id>/edit", methods=['POST'])
 def update_manufacturer(id):
     name = request.form['name']
     phone = request.form['phone']
     website  = request.form['website']
     email  = request.form['email']
-    manufacturer = Manufacturer(name, phone, website, email)
+    manufacturer = Manufacturer(name, phone, website, email, id)
     manufacturer_repository.update(manufacturer)
     return redirect('/manufacturers')
 

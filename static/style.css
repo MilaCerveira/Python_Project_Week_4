@@ -1,8 +1,7 @@
 body{
     font-family: "Helvetica", arial, sans-serif; font-size: 16px;
     background-color:#0b0c0c;
-    
-    
+    color: white;
   }
   
   /*style imorted google font */
@@ -36,7 +35,7 @@ body{
   }
   
   .buttons {
-    margin-top: 10px;
+    margin-top: 0px;
     margin-left: 2px;
     font-size: 1.4em;
     color: white;
@@ -54,11 +53,21 @@ body{
     box-sizing: border-box;
   }
   
-  .trash-button{
-    display: contents;
-    font-size: 65%;
+  form > button {
+    /* display: contents; */
+    /* font-size: 65%; */
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    width: 50px;
+}
+
+button {
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    width: 50px;   
   }
-  
   
   .delete-form{
     display: inline;
@@ -73,6 +82,7 @@ body{
   
   .menu li a{
     text-decoration: none;
+    
   }
   
   .menu li a:visited{
@@ -90,7 +100,36 @@ body{
     display: flex;
     flex-wrap: wrap;
     width: 300px;
-    margin: 0 auto;
+    margin: 0 100px
+    /* auto; */
   }
   
- 
+ .content {
+     color: white;
+ }
+
+ table > tbody > tr > th {
+    color: white;
+    padding: 5px;
+    text-align: center;
+ }
+
+ table > tbody > tr > td {
+    color: white;
+    padding: 5px;
+    text-align: center;
+ }
+
+ #update_manufacturer_button {
+    background-color: red; 
+    color: white;
+    height: 45px;
+    width: 100px;
+ }
+
+ #add_manufacturer_button {
+    background-color: red; 
+    color: white;
+    height: 45px;
+    width: 100px;
+ }
