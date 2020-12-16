@@ -31,7 +31,7 @@ def create_manufacturer():
 @manufacturers_blueprint.route("/manufacturers/<id>", methods=['GET'])
 def show_manufacturer(id):
     manufacturer = manufacturer_repository.select(id)
-    return render_template('manufacturers/show.html', manufacturer = manufacturer)
+    return render_template('templates/manufacturers/show.html', manufacturer = manufacturer)
 
 # EDIT
 # GET '/products/<id>/edit'
