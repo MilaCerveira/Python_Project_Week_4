@@ -33,7 +33,7 @@
           </div>
         </td>
         <td>
-          <a href = "/products/<id>"> {{product.name}} </a>
+          {{product.name}}
         </td>
       <!-- <a href="/products/{{product.id}}/edit">{{product.name}}</a> -->
 
@@ -41,9 +41,23 @@
         <td>
           {{product.description}}
         </td>
+        {% if product.stock_quantity == 0 %}
+        <td id='no_stock_alert'>
+          {{product.stock_quantity}}
+        </td>
+        {% elif product.stock_quantity < 50 %}
+        <td id='low_stock_alert'>
+          {{product.stock_quantity}}
+        </td>
+        {% elif product.stock_quantity > 500 %}
+        <td id='high_stock_alert'>
+          {{product.stock_quantity}}
+        </td>
+        {% else %}
         <td>
           {{product.stock_quantity}}
         </td>
+        {% endif %}
         <td>
           {{product.buying_cost}}
         </td>
